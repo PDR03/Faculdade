@@ -1,0 +1,29 @@
+Aluno
+Disciplina
+Professor
+Sala Lab Definida pelo sistema
+
+Obj: Desenvolver uma aplicação para matricula de aluno do 3° período
+
+O que deve fazer
+- aluno pode escolher a disciplina 
+- pode escolher o professor
+- sala irá ser definida pelo sistema
+
+req 
+-cadastrar aluno
+	nome
+	matricula
+-direito a 5 disciplinas
+	sistema deve apresentar as disciplinas
+-escolha professor
+	só pode selecionar um professor *disponivel*
+-atribuição aleatória da escolha do lab
+
+-cada disciplina deve receber uma sala do lab
+-deve mostrar 
+	nome do aluno
+	matricula 
+	disciplina escolhida 
+	professor	
+	sala
