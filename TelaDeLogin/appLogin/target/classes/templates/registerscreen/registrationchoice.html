@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options choices</title>
+    <link rel="stylesheet" href="/css/styleregisterchoice.css">
+</head>
+<body>
+    <div class="main-class">
+        <div class="title">
+            <span>Olá seja bem vindo! <br> O que deseja fazer hoje?</span>
+        </div>
+        <button class="btn-rgst-student" onclick="window.location.href = '/registerstudent' ">
+          <img src="/img/addchoice.png" class = "addchoice" alt="addchoice">
+            <span> adicionar aluno </span>
+        </button>
+
+        <button class="btn-rgst-manager" onclick="window.location.href = '/registermanager'">
+            <img src="/img/addchoice.png" class = "addchoice" alt="addchoice">
+            <span> adicionar gestor </span>
+        </button>
+
+        <button class="btn-rgst-teacher" onclick="window.location.href = '/registerteacher'">
+            <img src="/img/addchoice.png" class = "addchoice" alt="addchoice">
+            <span> adicionar professor </span>
+        </button>
+
+        <button class="btn-rmv-student" onclick="showOverlay()">
+            <img src="/img/removechoice.png" class = "removechoice" alt="removechoice">
+            <span> remover aluno </span>
+        </button>
+
+        <button class="btn-rmv-manager" onclick="window.location.href = '/registerteacher'">
+            <img src="/img/removechoice.png" class = "removechoice" alt="removechoice">
+            <span> remover gestor </span>
+        </button>
+        <button class="btn-rmv-teacher" onclick="window.location.href = '/registerteacher'">
+            <img src="/img/removechoice.png" class = "removechoice" alt="removechoice">
+            <span> remover professor </span>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-card">
+            <h2>Digite a matricula do aluno que deseja remover:</h2>
+            <label for="matricula">Matricula do aluno:</label>
+            <input type="text" name= "matricula" placeholder=" Matrícula do aluno">
+            <label>Digite sua senha:</label>
+            <input type="password" name="senha" placeholder="senha">
+            <button class="button-confirm">Confirmar</button>
+            <label>
+                <input type="checkbox" class="terms-checkbox" id="termsOfDeleteUser">
+                Tenho certeza que desejo realizar essa ação.
+            </label>
+            <a onclick="closeOverlay()">Voltar</a>
+        </div>
+
+    </div>
+
+    <script>
+        // Função para mostrar o overlay
+        function showOverlay() {
+            document.getElementById('overlay').style.display = 'flex'; // Mostra o overlay
+            document.getElementById('mainScreen').classList.add('blurred'); // Aplica o blur na tela principal
+        }
+
+        // Função para fechar o overlay
+        function closeOverlay() {
+            document.getElementById('overlay').style.display = 'none'; // Esconde o overlay
+            document.getElementById('mainScreen').classList.remove('blurred'); // Remove o blur da tela principal
+        }
+
+        document.getElementById('termsOfDeleteUser').addEventListener('change', function() {
+            if (this.checked) {
+                alert('Você concordou com os termos!');
+            } else {
+                alert('Você desmarcou os termos.');
+            }
+        });
+    </script>
+</body>
+</html>
